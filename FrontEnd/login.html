@@ -23,16 +23,16 @@
 		</nav>
 	</header>
     <main>
-		<section id="contact">
-		<h2>Log in</h2>
-		<form action="#" method="post">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
-			<label for="pass">Mot de passe</label>
-			<input type="text" name="pass" id="pass">
-			<input type="submit" value="Se connecter">
-			<p>Mot de passe oublié?</p>
-		</form>
+		<section class="log-in">
+			<h2>Log In</h2>		
+			<form class="form-login" action="#" method="post">
+				<label for="email">E-mail</label>
+				<input type="email" name="email" id="email" required>
+				<label for="pass">Mot de passe</label>
+				<input type="password" name="password" id="pass" minlength="6" required>
+				<input type="submit" class="rnd-button rnd-button--green" value="Se connecter">
+			</form>
+			<a class="underline">Mot de passe oublié</a>
 		</section>
 	</main>
     <footer class="footer_login">
