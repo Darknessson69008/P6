@@ -8,13 +8,15 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="text/javascript" src="./javascript/script.js"></script>
-	<!-- document ready pour chargement apres -->
 </head>
-<body>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+<body>	
+<header>	
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
@@ -37,14 +39,16 @@
 		</article>
 	</section>
 	<section id="portfolio">
+		<div class="projets">
 		<h2>Mes Projets</h2> 
+		<a href="#modal"><i class="fa-regular fa-pen-to-square"></i>Modifier</a>
+		</div>
 			<div id="filters" class="filters">
 				<button class="filter" onclick="showImages(0)">Tous</button>
 				<script>buildFilters()</script>
 			</div>
-			<!--script buildFilters-->
 		<div id="gallery" class="gallery">
-			<script>showImages(0)</script> <!--ici va se créer automatiquement au chargement via le fetch une image, src et alt, et une figcaption -->
+			<script>showImages(0)</script> 
 		</div>
 	</section>
 	<section id="contact">
@@ -60,6 +64,17 @@
 			<input type="submit" value="Envoyer">
 		</form>
 	</section>
+		
+	<section id="modal" class="modal">
+		<div class="modal_content"> fonction show add delete image
+				<div id="gallery" class="small_gallery">
+					<script>showImages(0)</script>
+				</div>
+			<button onclick="AddImage()">Envoyer</button>
+			<a href="#" class="modal_close">&times</a>
+		</div>
+	</section>
+
 </main>
 
 <footer>
