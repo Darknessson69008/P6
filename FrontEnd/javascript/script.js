@@ -1,11 +1,32 @@
-// const pour fetch au lancement, fetch avec elements img et figcaption
-// fonctions pour appel au besoin hors chargement de la page
-// fonction verbe 1er
+// mode edition
 
+function showEdit(action){
+    const edits = document.querySelectorAll(".edit");
+    if (action === "hide"){
+        edits.forEach( edit => edit.style.display = "none");
+    }else if (action === "show"){
+        edits.forEach( edit => edit.style.display = ""); //ne rien faire
+    }
+}
 
+function logInorOut() {
+    const tokenValue = window.localStorage.getItem('token');
+    const loginout = document.querySelector("#loginout");
+    console.log(loginout)
+    if (tokenValue != null){
+        showEdit('show');
+        loginout.innerText = "logout"; // logout display block & login none
+    }else{
+        showEdit('hide');
+        loginout.innerText = "login"; //
+    };
+}
 
+logInorOut();
+
+//gestion affichage images et filtres
 function showImage (url, title) { //affiche une image
-    const gallery = document.querySelector("#gallery");
+    const gallery = document.querySelector(".gallery");
     const figure = document.createElement("figure");
     const img = document.createElement("img");
     img.src = url;
@@ -58,6 +79,9 @@ function buildFilters() {
 }
 
 
+const modalGallery = document.querySelector('#small_gallery')
+let categoryID = 0;
+modalGallery.addEventListener("gallery",(categoryId) => showImages(categoryId))
 
-//pour filtre, faire if avec id dans showImages pour appeler les images valué de l'id catégori
-//tout = nofilter
+// dans modal, bouton ajout et suppression
+// alerte pour confirmer "confirm()"
