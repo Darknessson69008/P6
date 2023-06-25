@@ -20,7 +20,7 @@ function getImages() { //recupère les images
 }
 
 function clearImages(){
-    const gallery = document.querySelector("#gallery");
+    const gallery = document.querySelector(".gallery");
     gallery.innerHTML= ''; // favoriser simple quote plutot que double en js
 }
 

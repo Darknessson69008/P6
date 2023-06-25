@@ -35,11 +35,12 @@ loginout.addEventListener("click", function(event){
 });
 
 
-const modalGallery = document.querySelector('#small_gallery')
-let categoryID = 0;
-modalGallery.addEventListener("gallery",(categoryId) => showImages(categoryId))
-
-
-
-// dans modal, bouton ajout et suppression
+// dans modal, 1 bouton ajout et suppression
 // alerte pour confirmer "confirm()"
+
+
+const modal = document.querySelector('.modal')
+modal.addEventListener("click", function(event){
+    event.preventDefault();
+    window.location = "./index.html";
+})

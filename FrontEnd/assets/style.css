@@ -280,9 +280,9 @@ footer nav ul {
 	bottom: 0;
 	right: 0;
 	left: 0;
+	margin: 0;
 	position: fixed;
-	height: 120%;
-	box-sizing: border-box;
+	height: 100%;
 	background: rgba(148, 141, 141, 0.4);
 	display: flex;
 	justify-content: center;
@@ -298,8 +298,8 @@ footer nav ul {
 .modal_content {
 	background-color: white;
 	padding: 20px;
-	width: 40%;
-	height: 40%;
+	width: 60%;
+	height: 80%;
 	border-radius: 14px;
 	position: relative;
 }
