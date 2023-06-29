@@ -288,6 +288,10 @@ footer nav ul {
 	background: rgba(141, 141, 141, 0.4);
 }
 
+.modal h2 {
+	padding-top: 20px;
+}
+
 .modal_content {
 	display: flex;
 	flex-direction: column;
@@ -329,3 +333,27 @@ footer nav ul {
 	border-radius: 60px ;
 }
 
+.modal_content .return {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+}
+
+#small_gallery {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap:15px;
+	padding: 50px;
+}
+
+#small_gallery img {
+	position: relative;
+	max-width: 103px;
+	object-fit: cover;
+}
+
+#small_gallery img .deletePhoto {
+	position: absolute;
+}

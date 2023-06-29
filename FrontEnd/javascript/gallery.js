@@ -1,6 +1,6 @@
-
 //gestion affichage images et filtres
-function showImage (url, title) { //affiche une image
+
+function showGallImage (url, title) { //affiche une image
     const gallery = document.querySelector(".gallery");
     const figure = document.createElement("figure");
     const img = document.createElement("img");
@@ -13,23 +13,24 @@ function showImage (url, title) { //affiche une image
     gallery.appendChild(figure);
 }
 
-function getImages() { //recupère les images
+function getGallImages() { //recupère les images
     return fetch("http://localhost:5678/api/works")
     .then((works) => works.json())
     .then((work) => { return work; });
 }
 
-function clearImages(){
+function clearGallImages(){
     const gallery = document.querySelector(".gallery");
     gallery.innerHTML= ''; // favoriser simple quote plutot que double en js
 }
 
-function showImages (categoryId) { // affiche les images une par une
-    clearImages();
-    getImages().then((images) => {
+function showGalleryImages (categoryId = 0) { // affiche les images une par une
+    console.log("executing showGalleryImages")
+    clearGallImages();
+    getGallImages().then((images) => {
         images.forEach(image => {
             if (categoryId === image.categoryId || categoryId == 0) {
-                showImage(image.imageUrl, image.title);
+                showGallImage(image.imageUrl, image.title);
             }
         });
     })
@@ -46,12 +47,19 @@ function buildFilters() {
             button.innerText = filter.name;
             button.className = 'filter';
             button.onclick = function () {
-                showImages(filter.id);
+                showGalleryImages(filter.id);
             };
             filters.appendChild(button);
         })
     })
 }
 
+const tous = document.querySelector("#Tous")
+tous.addEventListener("click", (event) => {showGalleryImages(0)})
 
+function main(){
+    buildFilters();
+    showGalleryImages(0);
+}
 
+main();

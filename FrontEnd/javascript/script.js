@@ -51,6 +51,7 @@ const openModal = function(e) {
     modal.addEventListener('click', closeModal)
     modal.querySelector('.modal_close').addEventListener('click', closeModal)
     modal.querySelector('.modal_content').addEventListener('click', stopPropagation)
+    modal.querySelector('.modal_add').addEventListener('click', stopPropagation)
 }
 
 const closeModal = function (e) {
@@ -62,6 +63,7 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.modal_close').removeEventListener('click', closeModal)
     modal.querySelector('.modal_content').removeEventListener('click', stopPropagation)
+    modal.querySelector('.modal_add').removeEventListener('click', stopPropagation)
     modal = null
 }
 
@@ -74,34 +76,3 @@ document.querySelectorAll('.js_modal').forEach(a => {
 })
 
 
-/// fonction suppression de type :
-
-function deleteImage(id, token){
-    const url = `http://localhost:5678/api/works/${id}`;
-    const request = {
-        method: "DELETE",
-        headers: {
-            "Authorization": `Bearer ${token}`
-            }
-        };
-    const response = fetch( url, request);
-}
-
-/// pour resultat sur affichage modal, rappeler l'api de get
-
-/// fonction ajout de type :
-
-function addImage(bodyData, token) {
-    const url = "http://localhost:5678/api/works";      
-    const request = {
-        method: "POST",
-        headers: {
-         Authorization: `Bearer ${token}`
-        },
-        body: bodyData
-    };
-    const response = fetch( url, request);
-}
-
-
-//une modal 1 none 1 block au click

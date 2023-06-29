@@ -12,7 +12,6 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script type="text/javascript" src="./javascript/gallery.js"></script>
 </head>
 <body>	
 <header>
@@ -52,11 +51,9 @@
 		<a href="#modal" class="js_modal edit"><i class="fa-regular fa-pen-to-square"></i>Modifier</a>
 		</div>
 			<div id="filters" class="filters">
-				<button class="filter" onclick="showImages(0)">Tous</button> <!-- remplacer les script -->
-				<script>buildFilters()</script> 
+				<button id="Tous" class="filter">Tous</button>				
 			</div>
-		<div id="gallery" class="gallery">
-			<script>showImages(0)</script>
+		<div id="gallery" class="gallery">	
 		</div>
 	</section>
 	<section id="contact">
@@ -73,14 +70,18 @@
 		</form>
 	</section>
 	<section id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titleModal" style="display: none;">
-		<div class="modal_content"> 
-				<div id="small_gallery">
-					<h2 id="titleModal">Galerie photo</h2>
-					<div class="galleryModal"></div> 
-				</div>
-			<button class="button">Ajouter</button>
+		<div class="modal_content modal_main">
+			<h2 id="titleModal">Galerie photo</h2>  
+			<div id="small_gallery"></div>
+			<button class="button addButton">Ajouter</button>
 			<button class="modal_close">&times</button>
 		</div>
+		<div class="modal_content modal_add" style="display: none;">
+			<h2 id="titleModal">Ajout photo</h2>
+			<button class="return">&#10094;</button>
+		<button class="button">Ajouter</button>
+		<button class="modal_close">&times</button>
+	</div>
 	</section>
 
 </main>
@@ -92,6 +93,7 @@
 		</ul>
 	</nav>
 </footer>
+<script type="text/javascript" src="./javascript/gallery.js"></script>
 <script type="text/javascript" src="./javascript/script.js"></script>
 <script type="text/javascript" src="./javascript/modal.js"></script>
 </body>
