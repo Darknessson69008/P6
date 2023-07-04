@@ -77,10 +77,32 @@
 			<button class="modal_close">&times</button>
 		</div>
 		<div class="modal_content modal_add" style="display: none;">
-			<h2 id="titleModal">Ajout photo</h2>
 			<button class="return">&#10094;</button>
-		<button class="button">Ajouter</button>
-		<button class="modal_close">&times</button>
+			<h2 id="titleModal">Ajout photo</h2>
+			<form id="modalform-add" class="modal_form" action="#">
+                <div class="modal_form_imgDiv">
+                    <label for="add-photo-input" class="material-symbols-outlined add-photo-label">
+                        <span class="add-photo-button">Ajouter une photo</span>
+                        <span class="add-photo-specs">jpg, png: 4mo max</span>
+                    </label>
+                    <input id="add-photo-input" class="add-photo-input" type="file" accept=".png, .jpg, .jpeg" name="+ Ajouter photo" required="">
+                </div>
+                <div class="file-input-info">
+                    <label for="img-title">Titre</label>
+                    <input type="text" name="img-title" id="img-title" required="">
+                </div>
+                <div class="file-input-info">
+                    <label for="img-category">Catégorie</label>
+                    <select id="img-category" required="">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">Objets</option>
+                        <option value="2">Appartements</option>
+                        <option value="3">Hotels &amp; restaurants</option>
+                    </select>
+                </div>
+        		<button type="submit" class="button addPhotoButton">Ajouter</button>
+			</form>
+			<button class="modal_close">&times</button>
 	</div>
 	</section>
 

@@ -1,3 +1,43 @@
+//ouverture et fermeture modal
+
+let modal = null
+
+function openModal(e) {
+    e.preventDefault()
+    const target = document.querySelector(e.target.getAttribute('href'))
+    target.style.display = null
+    target.removeAttribute('aria-hidden')
+    target.setAttribute('aria-modal', 'true')
+    modal = target
+    modal.addEventListener('click', closeModal)
+    modal.querySelector('.modal_close').addEventListener('click', closeModal)
+    modal.querySelector('.modal_content').addEventListener('click', stopPropagation)
+    modal.querySelector('.modal_add').addEventListener('click', stopPropagation)
+}
+
+function closeModal(e) {
+    if (modal === null) return
+    e.preventDefault()
+    modal.style.display = "none"
+    modal.setAttribute('aria-hidden', 'true')
+    modal.removeAttribute('aria-modal')
+    modal.removeEventListener('click', closeModal)
+    modal.querySelector('.modal_close').removeEventListener('click', closeModal)
+    modal.querySelector('.modal_content').removeEventListener('click', stopPropagation)
+    modal.querySelector('.modal_add').removeEventListener('click', stopPropagation)
+    modal = null
+}
+
+const stopPropagation = function (e) {
+    e.stopPropagation()
+}
+
+document.querySelectorAll('.js_modal').forEach(a => {
+    a.addEventListener('click', openModal)    
+})
+
+
+
 // mode edition
 
 function showEdit(action){
@@ -36,43 +76,4 @@ loginout.addEventListener("click", function(event){
 
 // dans modal, 1 bouton ajout et suppression
 // alerte pour confirmer "confirm()"
-
-//ouverture et fermeture modal
-
-let modal = null
-
-const openModal = function(e) {
-    e.preventDefault()
-    const target = document.querySelector(e.target.getAttribute('href'))
-    target.style.display = null
-    target.removeAttribute('aria-hidden')
-    target.setAttribute('aria-modal', 'true')
-    modal = target
-    modal.addEventListener('click', closeModal)
-    modal.querySelector('.modal_close').addEventListener('click', closeModal)
-    modal.querySelector('.modal_content').addEventListener('click', stopPropagation)
-    modal.querySelector('.modal_add').addEventListener('click', stopPropagation)
-}
-
-const closeModal = function (e) {
-    if (modal === null) return
-    e.preventDefault()
-    modal.style.display = "none"
-    modal.setAttribute('aria-hidden', 'true')
-    modal.removeAttribute('aria-modal')
-    modal.removeEventListener('click', closeModal)
-    modal.querySelector('.modal_close').removeEventListener('click', closeModal)
-    modal.querySelector('.modal_content').removeEventListener('click', stopPropagation)
-    modal.querySelector('.modal_add').removeEventListener('click', stopPropagation)
-    modal = null
-}
-
-const stopPropagation = function (e) {
-    e.stopPropagation()
-}
-
-document.querySelectorAll('.js_modal').forEach(a => {
-    a.addEventListener('click', openModal)    
-})
-
 
