@@ -365,9 +365,11 @@ footer nav ul {
 	border-bottom: 1px solid #1D6154;
 }
 
-#small_gallery .figure {
+#small_gallery figure {
 	display: flex;
 	position: relative;
+	flex-direction: column;
+	max-width: 15%;
 }
 
 #small_gallery img {
@@ -375,12 +377,12 @@ footer nav ul {
 	max-width: 100px;
 }
 
-#small_gallery .figure .figcaption {
+#small_gallery figure .figcaption {
 	width: 100%;
 }
 
-#small_gallery .figure .deleteButton {
+#small_gallery figure .deleteButton {
 	position: absolute;
-	top:0;
+	top: 0;
 	right: 0;
 }
