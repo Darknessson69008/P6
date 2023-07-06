@@ -180,4 +180,30 @@ ret.addEventListener("click", swipeModal);
 
 /// pour resultat sur affichage modal, rappeler l'api de get
 
+
+/// affichage miniature image
+
+function imageHandler(e2) 
+{ 
+  var store = document.getElementById('imgstore');
+  store.innerHTML='<img src="' + e2.target.result +'">';
+}
+
+function loadimage(e1)
+{
+  var filename = e1.target.files[0]; 
+  var fr = new FileReader();
+  fr.onload = imageHandler;  
+  fr.readAsDataURL(filename);
+  document.querySelectorAll('.loadimage').forEach((a) => {
+    a.style.display='none';
+  });
+}
+
+window.onload=function()
+{
+  var y = document.getElementById("add-photo-input");
+  y.addEventListener('change', loadimage);
+}
+
 //une modal 1 none 1 block au click
