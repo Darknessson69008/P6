@@ -81,11 +81,12 @@
 			<h2 id="titleModal">Ajout photo</h2>
 			<form id="modalform-add" class="modal_form" action="#">
                 <div class="modal_form_imgDiv">
+					<i class="fa-regular fa-image fa-2xl"></i>
+					<label for="add-photo-input" class="add-photo-button">+ Ajouter une photo</label>
+                    <input id="add-photo-input" class="add-photo-input" type="file" accept=".png, .jpg, .jpeg" name="+ Ajouter photo" required="">
                     <label for="add-photo-input" class="material-symbols-outlined add-photo-label">
-                        <span class="add-photo-button">Ajouter une photo</span>
                         <span class="add-photo-specs">jpg, png: 4mo max</span>
                     </label>
-                    <input id="add-photo-input" class="add-photo-input" type="file" accept=".png, .jpg, .jpeg" name="+ Ajouter photo" required="">
                 </div>
                 <div class="file-input-info">
                     <label for="img-title">Titre</label>
@@ -98,9 +99,9 @@
                         <option value="1">Objets</option>
                         <option value="2">Appartements</option>
                         <option value="3">Hotels &amp; restaurants</option>
-                    </select>
+                    </select> <!-- gestion cat via api -->
                 </div>
-        		<button type="submit" class="button addPhotoButton">Ajouter</button>
+        		<button type="submit" class="button addPhotoButton">Valider</button>
 			</form>
 			<button class="modal_close">&times</button>
 	</div>

@@ -299,7 +299,7 @@ footer nav ul {
 	background-color: white;
 	padding: 20px;
 	width: 60%;
-	height: 80%;
+	max-height: 80%;
 	border-radius: 14px;
 	position: relative;
 }
@@ -339,14 +339,49 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
-	padding-top: 50px;
+	padding-top: 30px;
+	width: 50%;
 }
 
 .modal .modal_content .modal_form_imgDiv {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 15px;
+	background-color: rgba(232, 241, 246, 1);
+	padding: 30px;
+	height: 50%;
+	width: 100%;
 }
+
+.modal .modal_content .modal_form_imgDiv .add-photo-button {
+	display: flex;
+	font-family: 'Work';
+	font-weight: 700;
+	color: rgba(48, 102, 133, 1);
+	background-color: rgba(203, 214, 220, 1);
+	width: 180px;
+	height: 30px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	border-radius: 60px ;
+	cursor: pointer;
+	margin: 15px;
+}
+
+.modal .modal_content .modal_form_imgDiv .add-photo-input {
+	display: none;
+	visibility: none;
+}
+
+.modal .modal_content .modal_form_imgDiv .add-photo-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 15px;
+}
+/* styliser bouton ajout avec icone */
 
 .modal_content .return {
 	position: absolute;
