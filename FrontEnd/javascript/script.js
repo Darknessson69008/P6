@@ -10,7 +10,6 @@ function openModal(e) {
   target.setAttribute("aria-modal", "true");
   modal = target;
   modal.addEventListener("click", closeModal);
-
   document.querySelectorAll(".modal_close").forEach((a) => {
     a.addEventListener("click", closeModal);
   });

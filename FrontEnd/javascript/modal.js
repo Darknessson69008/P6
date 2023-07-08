@@ -123,34 +123,35 @@ async function addPhoto(e) {
   const addPhotoInput = document.getElementById("add-photo-input");
   const titleInput = document.getElementById("img-title");
   const categoryInput = document.getElementById("img-category");
-
   const files = addPhotoInput.files;
   console.log(files);
   const file = files[0];
-  /* validFileSize(files);
+  const photoForm = document.getElementById('modalform-add');
+  validFileSize(files);
   validFileType(files);
-  if (photoForm.validFileType(files) && validFileSize(files)) {
+  if (photoForm.reportValidity() && validFileType(files) && validFileSize(files)) {
     console.log("fichier ok");
-  } else {
-    if (files.length === 0) {
-      Alert("Erreur de fichier!");
-    } else if (!validFileType(files)) {
-      Alert("Erreur: format de l'image non valide.");
-    } else if (!validFileSize(files)) {
-      Alert("Erreur: la taille de l'image est trop grande.");
-    } else if (!titleInput.validity.valid) {
-      Alert("Erreur: Le titre doit être renseigné.");
-    } else if (!categoryInput.validity.valid) {
-      Alert("Erreur: La catégorie doit être renseignée.");
-      return;
-    } */
-  const formDataAdd = new FormData();
-  formDataAdd.append("image", file);
-  formDataAdd.append("title", titleInput.value);
-  formDataAdd.append("category", categoryInput.value);
-  await addImage(formDataAdd, token);
-  swipeModal();
-  showImages();
+    const formDataAdd = new FormData();
+    formDataAdd.append("image", file);
+    formDataAdd.append("title", titleInput.value);
+    formDataAdd.append("category", categoryInput.value);
+    await addImage(formDataAdd, token);
+    swipeModal();
+    showImages();
+    } else {
+      if (files.length === 0) {
+        alert("Absence de fichier!");
+      } else if (!validFileType(files)) {
+        alert("Erreur: format de l'image non valide.");
+      } else if (!validFileSize(files)) {
+        alert("Erreur: la taille de l'image est trop grande.");
+      } else if (!titleInput.validity.valid) {
+        alert("Erreur: Le titre doit être renseigné.");
+      } else if (!categoryInput.validity.valid) {
+        alert("Erreur: La catégorie doit être renseignée.");
+        return;
+      } 
+  }
 }
 
 ///affichage réciproque des modales
@@ -206,4 +207,3 @@ window.onload=function()
   y.addEventListener('change', loadimage);
 }
 
-//une modal 1 none 1 block au click
