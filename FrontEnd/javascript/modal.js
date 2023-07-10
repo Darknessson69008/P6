@@ -90,6 +90,26 @@ function showImages(categoryId = 0) {
 const openModalGallery = document.querySelector(".js_modal");
 openModalGallery.addEventListener("click", showImages(0));
 
+/////menu déroulant categories
+
+function buildCat() {
+  const select = document.querySelector("#img-category");
+  return fetch("http://localhost:5678/api/categories")
+  .then((categories) => categories.json())
+  .then((category) => { return category; })
+  .then((cats) => {
+      cats.forEach(cat => {
+          const option = document.createElement("option");
+          option.innerText = cat.name;
+          option.value = cat.id;
+          select.appendChild(option);
+      })
+  })
+}
+
+buildCat();
+
+
 ////////// vérification validité fichiers
 
 const maxSize = 4000000;
