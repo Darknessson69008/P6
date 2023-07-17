@@ -14,7 +14,7 @@ function connect(event){
     .then (resp => resp.json())
     .then ((response) => {
         if (!response.token) { 
-            alert("Erreur"); //eviter alerte, faire un display block sur un element none dans html
+            alert("Identifiant ou mot de passe incorrect"); //eviter alerte, faire un display block sur un element none dans html
             return;
         }
             
