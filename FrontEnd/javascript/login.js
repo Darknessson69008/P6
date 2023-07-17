@@ -14,7 +14,7 @@ function connect(event){
     .then (resp => resp.json())
     .then ((response) => {
         if (!response.token) { 
-            alert("Identifiant ou mot de passe incorrect"); //eviter alerte, faire un display block sur un element none dans html
+            alert("Identifiant ou mot de passe incorrect"); 
             return;
         }
             
@@ -26,7 +26,7 @@ function connect(event){
 
 
 const form = document.querySelector(".logForm")
-form.addEventListener("submit",(event)=> connect(event)) 
+form.addEventListener("submit",(event)=> connect(event))
 
 // item dans script.js pour verif SI token
 // 

@@ -53,8 +53,7 @@
 			<div id="filters" class="filters">
 				<button id="Tous" class="filter">Tous</button>				
 			</div>
-		<div id="gallery" class="gallery">	
-		</div>
+		<div id="gallery" class="gallery"></div>
 	</section>
 	<section id="contact">
 		<h2>Contact</h2>
@@ -73,7 +72,7 @@
 		<div class="modal_content modal_main">
 			<h2 id="titleModal">Galerie photo</h2>  
 			<div id="small_gallery"></div>
-			<button class="button addButton">Ajouter</button>
+			<button id ="AddPhotoModal" class="button addButton">Ajouter</button>
 			<button class="modal_close">&times</button>
 		</div>
 		<div class="modal_content modal_add" style="display: none;">
@@ -97,10 +96,10 @@
                     <label for="img-category">Catégorie</label>
                     <select id="img-category" required=""></select>
                 </div>
-        		<button type="submit" class="button addPhotoButton">Valider</button>
+        		<button type="submit" id="ValidPhotoModal" class="button addPhotoButton">Valider</button>
 			</form>
 			<button class="modal_close">&times</button>
-	</div>
+		</div>
 	</section>
 
 </main>

@@ -71,7 +71,7 @@ function getImages() {
 
 function clearImages() {
   const smallgallery = document.querySelector("#small_gallery");
-  smallgallery.innerHTML = ""; // favoriser simple quote plutot que double en js
+  smallgallery.innerHTML = ""; // essayer favoriser simple quote plutot que double en js
 }
 
 function showImages(categoryId = 0) {
@@ -156,7 +156,7 @@ async function addPhoto(e) {
     formDataAdd.append("title", titleInput.value);
     formDataAdd.append("category", categoryInput.value);
     await addImage(formDataAdd, token);
-    swipeModal();
+//    swipeModal();
     showImages();
     } else {
       if (files.length === 0) {
@@ -175,6 +175,8 @@ async function addPhoto(e) {
 }
 
 ///affichage réciproque des modales
+    const addButton = document.querySelector("#ValidPhotoModal");
+    addButton.addEventListener("click", (e) => addPhoto(e));
 
 function swipeModal() {
   const mod1 = document.querySelector(".modal_main");
@@ -183,13 +185,11 @@ function swipeModal() {
     mod1.style.display = "none";
     mod2.style.display = "flex";
     ///attention X ne ferme plus ///add et fonction ajout
-    const addButton = document.querySelector(".addPhotoButton");
-    addButton.addEventListener("click", (e) => addPhoto(e));
   } else {
     mod1.style.display = "flex";
     mod2.style.display = "none";
-    const addButton = document.querySelector(".addPhotoButton");
-    addButton.removeEventListener("click", (e) => addPhoto(e));
+    const addButton = document.querySelector("#ValidPhotoModal");
+    addButton.removeEventListener("click", (e) => addPhoto(e));    
   }
 }
 
