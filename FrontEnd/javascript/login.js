@@ -24,7 +24,6 @@ function connect(event){
     })
 }; 
 
-
 const form = document.querySelector(".logForm")
 form.addEventListener("submit",(event)=> connect(event))
 

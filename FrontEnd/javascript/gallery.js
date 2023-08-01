@@ -13,15 +13,15 @@ function showGallImage (url, title) { //affiche une image
     gallery.appendChild(figure);
 }
 
+function clearGallImages(){
+    const gallery = document.querySelector(".gallery");
+    gallery.innerHTML= ''; // favoriser simple quote plutot que double en js
+}
+
 function getGallImages() { //recupère les images
     return fetch("http://localhost:5678/api/works")
     .then((works) => works.json())
     .then((work) => { return work; });
-}
-
-function clearGallImages(){
-    const gallery = document.querySelector(".gallery");
-    gallery.innerHTML= ''; // favoriser simple quote plutot que double en js
 }
 
 function showGalleryImages (categoryId = 0) { // affiche les images une par une

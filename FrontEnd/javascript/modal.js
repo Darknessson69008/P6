@@ -175,8 +175,9 @@ async function addPhoto(e) {
 }
 
 ///affichage réciproque des modales
-    const addButton = document.querySelector("#ValidPhotoModal");
-    addButton.addEventListener("click", (e) => addPhoto(e));
+const addButton = document.querySelector("#ValidPhotoModal");
+addButton.addEventListener("click", (e) => addPhoto(e));
+
 
 function swipeModal() {
   const mod1 = document.querySelector(".modal_main");
